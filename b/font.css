@@ -1,0 +1,248 @@
+ul{
+    list-style-type: none;
+    margin: 0;
+    width: 512px;
+}
+ul li{
+    height: 128px;
+    width: 128px;
+    box-shadow: 0px 0px 5px #e5e5e5;
+    float:left;
+}
+a,a:hover{
+    text-decoration: none;
+    color:#ccc;
+}
+ul li a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height: 128px;
+    text-align: center;
+}
+ul li a:hover{
+    background-color: #f9f9f9;
+}
+@font-face {
+    font-family:"imoon-icon";
+    src:url("fonts/icomoon.eot");/*ie9兼容模式*/
+    src:url("fonts/icomoon.eot?#iefix") format("embedded-opentype"),
+        url("fonts/icomoon.woff") format("woff"),
+        url("fonts/icomoon.ttf") format("truetype"),
+        url("fonts/icomoon.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+.imooc-icon{
+    font-family: "imoon-icon";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    /*抗锯齿*/
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    /*//动画*/
+    /*animation:myframe 5s;*/
+    /*-moz-animation: myframe 5s;*/
+    /*-webkit-animation: myframe 5s;*/
+    /*-o-animation: myframe 5s;*/
+}
+@keyframes myframe {
+    from{font-size: 40px;opacity: 1;filter:alpha(opacity=100);}
+    to{font-size: 128px;opacity: 0;filter:alpha(opacity=0);}
+}
+@-moz-keyframes myframe {
+    from{font-size: 40px;opacity: 1;filter:alpha(opacity=100);}
+    to{font-size: 128px;opacity: 0;filter:alpha(opacity=0);}
+}
+@-webkit-keyframes myframe {
+    from{font-size: 40px;opacity: 1;filter:alpha(opacity=100);}
+    to{font-size: 128px;opacity: 0;filter:alpha(opacity=0);}
+}
+@-o-keyframes myframe {
+    from{font-size: 40px;opacity: 1;filter:alpha(opacity=100);}
+    to{font-size: 128px;opacity: 0;filter:alpha(opacity=0);}
+}
+.icon-smile:before{
+    content: "\e905"
+}
+.icon-smile:after{
+    content: "\e906"
+}
+.icon-tongue:before{
+    content: "\e907"
+}
+.icon-tongue:after{
+    content: "\e908"
+}
+.icon-sad:before{
+    content: "\e902"
+}
+.icon-sad:after{
+    content: "\e901"
+}
+.icon-wink:before{
+    content: "\e90b"
+}
+.icon-wink:after{
+    content: "\e90c"
+}
+.icon-grin:before{
+    content: "\e90d"
+}
+.icon-grin:after{
+    content: "\e90e"
+}
+.icon-cool:before{
+    content: "\e90f"
+}
+.icon-cool:after{
+    content: "\e910"
+}
+.icon-angry:before{
+    content: "\e911"
+}
+.icon-angry:after{
+    content: "\e912"
+}
+.icon-evil:before{
+    content: "\e913"
+}
+.icon-evil:after{
+    content: "\e914"
+}
+
+.shadow{
+    color:#fff;
+    text-shadow: 5px 5px 0px #b13947,10px 10px 0px rgba(0,0,0,0.15);
+}
+@keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform:rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform:rotate(359deg);
+    }
+}
+@-webkit-keyframes spinner {
+    0% {
+    -webkit-transform: rotate(0deg);
+        transform:rotate(0deg);
+   }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform:rotate(359deg);
+    }
+}
+@-moz-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform:rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform:rotate(359deg);
+    }
+}
+@-o-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform:rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform:rotate(359deg);
+    }
+}
+/*两秒为周期无线匀速运动*/
+.spinner{
+    -webkit-animation: spinner 2s infinite linear;
+    animation:spinner 2s infinite linear;
+}
+
+.love{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+.love:before,.love:after{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+}
+.love:after{
+    z-index: 0;
+    color: #cecece;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.love:before{
+    z-index: 1;
+    color: #ea515e;
+    /*使元素水平方向和垂直方向同时缩小为0倍*/
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+	/*ie9*/
+    -ms-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+/*点击图标的放大效果*/
+@-webkit-keyframes scaleFade {
+    50%{
+        opacity: 1;
+        -webkit-transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+    }
+}
+@-moz-keyframes scaleFade {
+    50%{
+        opacity: 1;
+        -webkit-transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+    }
+}
+@-o-keyframes scaleFade {
+    50%{
+        opacity: 1;
+        -webkit-transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+    }
+}
+@keyframes scaleFade {
+    50%{
+        opacity: 1;
+        -webkit-transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+    }
+}
+/*forwards动画结束后立即从结束状态到其实状态*/
+.love.btn-activated:before{
+    -webkit-animation: scaleFade 0.5s forwards;
+    -moz-animation: scaleFade 0.5s forwards;
+   animation: scaleFade 0.5s forwards;
+}

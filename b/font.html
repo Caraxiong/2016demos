@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="font.css">
+		<script src="js/jquery-1.11.1.js"></script>
+		<script>
+			$(function(){
+				$(".love").click(function(){
+					var $this = $(this);
+					$this.addClass("btn-activated");
+					setTimeout(function(){
+						$this.removeClass("btn-activated");
+					},500);
+				})
+			});
+		</script>
+	</head>
+	<body>
+	<ul class="list">
+		<li><a href="javascript:void(0)"><i class="imooc-icon icon-smile shadow"></i></a></li>
+		<li><a href="javascript:void(0)"><i class="imooc-icon icon-tongue spinner"></i></a></li>
+		<li><a href="javascript:void(0)"><i class="imooc-icon icon-sad love"></i></a></li>
+		<li><a href="javascript:void(0)"><i class="imooc-icon icon-wink"></i></a></li>
+		<li><a href="javascript:void(0)"><i class="imooc-icon icon-grin"></i></a></li>
+		<li><a href="javascript:void(0)"><i class="imooc-icon icon-cool"></i></a></li>
+		<li><a href="javascript:void(0)"><i class="imooc-icon icon-angry"></i></a></li>
+		<li><a href="javascript:void(0)"><i class="imooc-icon icon-evil love"></i></a></li>
+	</ul>
+	</body>
+</html>

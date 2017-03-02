@@ -1,0 +1,102 @@
+/**
+ * Created by Administrator on 2015/9/24 0024.
+ */
+$(function(){
+    $(window).resize(function(){
+        if(document.documentElement.clientWidth>1200){
+            $(".main-menu").show();
+            $(".main-user").hide();
+            if($("largeGlobal").hasClass("isOpen")){
+                $(".global").show();
+            }else{
+                $(".global").hide();
+            }
+        }else{
+            if($(".open-menu").hasClass("isOpen")){
+                $(".main-menu").show();
+            }else{
+                $(".main-menu").hide();
+            }
+            if($("smallGlobal").hasClass("isOpen")){
+                $(".global").show();
+            }else{
+                $(".global").hide();
+            }
+        }
+    });
+    $("#searchBtn").click(function(){
+        if($(".search").is(":hidden")){
+            $(".search").fadeIn();
+            $(".global").fadeOut();
+        }else{
+            $(".search").fadeOut();
+        }
+    });
+    $(".global-open").click(function(){
+        if($(".global").is(":hidden")){
+            $(".global").fadeIn();
+            $(".search").fadeOut();
+            $(this).addClass("isOpen");
+        }else{
+            $(".global").fadeOut();
+            $(this).removeClass("isOpen");
+        }
+    });
+    $(".open-menu").click(function(){
+        if($(".main-menu").is(":hidden")){
+            $(".main-menu").fadeIn();
+            $(".main-user").fadeOut();
+            $(this).addClass("isOpen");
+        }else{
+            $(".main-menu").fadeOut();
+            $(".global").fadeOut();
+            $(this).removeClass("isOpen");
+        }
+    });
+    $(".open-user").click(function(){
+        if($(".main-user").is(":hidden")){
+            $(".main-user").fadeIn();
+            $(".main-menu").fadeOut();
+            $(".global").fadeOut();
+            $(".open-menu").removeClass("isOpen");
+        }else{
+            $(".main-user").fadeOut();
+        }
+    });
+    //轮播部分
+    $(".slide-body").width(document.documentElement.clientWidth);
+    $(".inner-slide").width(document.documentElement.clientWidth*3);
+    $(".inner-slide img").width(document.documentElement.clientWidth);
+    $(window).resize(function(){
+        $(".slide-body").width(document.documentElement.clientWidth);
+        $(".inner-slide").width(document.documentElement.clientWidth*3);
+        $(".inner-slide img").width(document.documentElement.clientWidth);
+    });
+
+    var i= 1;
+    setInterval(function(){
+        var j = i/3;
+        if(j===1){
+            i=0;
+        }
+        $(".inner-slide").animate({"margin-left":-document.documentElement.clientWidth*i});
+        i++;
+    },3000);
+    //图标效果
+    $(".love").click(function(){
+        var $this = $(this);
+        $this.addClass("btn-activated");
+        setTimeout(function(){
+            $this.removeClass("btn-activated");
+        },500);
+    });
+    //checkbox、radio
+    $(".handle").click(function(){
+        var $checkbox = $(".toggle input[type='checkbox']");
+        if($checkbox.is(":checked")){
+            $checkbox.prop("checked",false);
+        }else{
+            $checkbox.prop("checked",true);
+        }
+    })
+});
